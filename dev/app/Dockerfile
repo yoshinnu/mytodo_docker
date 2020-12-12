@@ -14,6 +14,11 @@ RUN groupadd nginx
 RUN useradd -g nginx nginx
 COPY supervisor/app.conf /etc/supervisor/conf.d/app.conf
 
+#build app
+WORKDIR /var/www/app
+COPY ./package*.json ./
+RUN npm install
+
 
 EXPOSE 80
 CMD ["/usr/bin/supervisord"]
