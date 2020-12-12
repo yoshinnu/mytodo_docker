@@ -12,7 +12,7 @@ services:
     ports:
       - '80:80'
     volumes:
-      - ~/git/DockerTest/:/var/www/app
+      - /c/apps/mytodoapp/myapp:/var/www/app
     depends_on: 
       - db
   db:
