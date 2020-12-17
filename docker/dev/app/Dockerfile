@@ -17,7 +17,7 @@ COPY supervisor/app.conf /etc/supervisor/conf.d/app.conf
 #build app
 WORKDIR /var/www/app
 COPY ./package*.json ./
-RUN npm install
+RUN npm install --unsafe-perm
 
 
 EXPOSE 80
