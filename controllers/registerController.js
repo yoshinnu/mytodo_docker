@@ -32,7 +32,7 @@ const postCreateUser = async (req, res) => {
     });
     auth.createToken(res, user);
     //logの登録
-    log.logRegister(req.body.username, req.body.id);
+    log.logRegister(req.body.username, user.id);
     return res.status(200).redirect('/home')
   }
 };

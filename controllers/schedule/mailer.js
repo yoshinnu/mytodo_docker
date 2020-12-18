@@ -1,3 +1,4 @@
+require('dotenv').config();
 const mail = require('nodemailer');
 const senderEmailAddress = process.env.EMAILADRESS;
 const senderEmailPassword = process.env.EMAILPASSWORD;

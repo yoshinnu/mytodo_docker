@@ -12,7 +12,7 @@ services:
     ports:
       - '80:80'
     volumes:
-      - /c/apps/mytodo_docker/myapp:/var/www/app
+      - /c/apps/mytodo_docker/:/var/www/app
     depends_on: 
       - db
   db:

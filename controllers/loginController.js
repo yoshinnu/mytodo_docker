@@ -15,13 +15,16 @@ const postLoginUser = async (req, res) => {
   const user = await db.getUserByEmail(req.body.email)
     .catch((error) => {
       console.error(error);
-      res.status(400);
+      return res.status(400).redirect('/');
     });
-  if (user.is_admin === 0) {
-    // jwt作成
-    auth.createToken(res, user);
-    // home画面へ
-    return res.status(200).redirect('/home');
+
+  if (user.length <= 1) {
+    if (user.is_admin === 0) {
+      // jwt作成
+      auth.createToken(res, user);
+      // home画面へ
+      return res.status(200).redirect('/home');
+    }
   }
   if (user && user.email === req.body.email && bcrypt.compareSync(req.body.password, user.password)) {
     // jwt作成
