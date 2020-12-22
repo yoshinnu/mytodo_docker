@@ -1,8 +1,7 @@
 docker/dev/mysql/data
 myapp/node_modules
 node_modules
-docker
 .env
 dbtest.js
 docker/dev/app/app.env
-docker/dev/mysql/my.cnf
+docker/dev/mysql/mysql.env
