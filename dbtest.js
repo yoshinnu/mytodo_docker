@@ -20,13 +20,13 @@ let prize = {
   pointcost: 4000,
   name: 'text-white tanjiro'
 }
-model.prizes.create(prize);
-
-// prize = {
-//   pointcost: 2000,
-//   name: 'text-white  giyu'
-// }
 // model.prizes.create(prize);
+
+prize = {
+  pointcost: 2000,
+  name: 'text-white  giyu'
+}
+model.prizes.create(prize);
 // prize = {
 //   pointcost: 2000,
 //   name: 'zenitsu'
