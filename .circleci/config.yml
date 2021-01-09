@@ -1,0 +1,20 @@
+version: 2
+jobs:
+  deploy:
+    machine:
+      enabled: true
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "6a:5a:c4:15:36:c1:7c:01:6b:21:2f:3e:49:65:a9:df"
+      - run: ssh -p $SSH_PORT $SSH_USER@$SSH_HOST "/var/www/app/myapp/deploy.sh"
+
+workflows:
+  version: 2
+  deploy:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only: master
+
